@@ -1,0 +1,46 @@
+$primary-color: #563d7c;
+
+
+.navbar {
+    background-color: $primary-color !important;
+   
+    img{
+        width: 50px;
+    }
+}
+
+
+
+
+@media(max-width:992px){
+    
+    // .form-inline{
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    // }
+    .form-inline{
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .btn{
+            display: inline !important;
+        }
+        .form-control{
+            display: inline;
+            flex-grow: 1;
+           
+        }
+    }
+
+}
+
+@media(max-width:618px){
+    .form-control{
+        margin-right: 8px;
+        
+    }
+    .form-inline{
+        height: 37.986px;
+    }
+}
