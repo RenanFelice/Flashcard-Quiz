@@ -2,12 +2,15 @@ import React from 'react';
 import './App.scss';
 import FlashcardList from './components/FlashcardList'
 import Navbar from './components/Navbar'
+import QuizProvider from './context/QuizContext'
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <FlashcardList/>
+      <QuizProvider>
+        <Navbar />
+        <FlashcardList />
+      </QuizProvider>
     </div>
   );
 }

@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Flashcard from './Flashcard'
 import './FlashcardList.scss'
+import { quizContext } from '../context/QuizContext'
 
 const FlashcardList = () => {
-    return ( <div className='FlashcardList'>
-            <Flashcard/>
-            <Flashcard/>
-            <Flashcard/>
-        </div> );
+    const { questions, loading } = useContext(quizContext)
+    console.log(questions)
+    return (
+
+        <div className='FlashcardList'>
+            {loading ?
+                <>
+                    <div className="spinner"></div>
+                    <div className="logo">loading...</div>
+                </> : <h1>loadado</h1>}
+        </div>);
 }
- 
+
 export default FlashcardList;

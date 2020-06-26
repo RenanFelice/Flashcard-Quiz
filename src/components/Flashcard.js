@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Flashcard.scss'
 
 const Flashcard = () => {
-
     const [isFlipping, setIsFlipping] = useState(false)
     const [flip, setFlip] = useState(false)
     return (
