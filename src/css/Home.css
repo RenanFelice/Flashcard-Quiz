@@ -1,0 +1,169 @@
+.Home {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+}
+
+.Home .form-inline {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: formAnimation 0.7s ease-out forwards 0.5s;
+          animation: formAnimation 0.7s ease-out forwards 0.5s;
+  opacity: 0;
+}
+
+.Home .form-inline .form-control {
+  width: 500px;
+}
+
+.Home .Home-Title-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.Home .Home-Title {
+  margin-top: 20rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  color: white;
+  font-size: 4rem;
+  -webkit-animation: homeAnimation 0.7s ease-out forwards 0.5s;
+          animation: homeAnimation 0.7s ease-out forwards 0.5s;
+  opacity: 0;
+}
+
+.Home .Home-SubTitle {
+  text-align: center;
+  color: white;
+  -webkit-animation: subtitle 0.5s 1s forwards cubic-bezier(0.005, 0.375, 0, 1.3);
+          animation: subtitle 0.5s 1s forwards cubic-bezier(0.005, 0.375, 0, 1.3);
+  opacity: 0;
+}
+
+@-webkit-keyframes homeAnimation {
+  from {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes homeAnimation {
+  from {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes formAnimation {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes formAnimation {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes subtitle {
+  from {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes subtitle {
+  from {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 991px) {
+  .Home .Home-Title {
+    font-size: 2rem;
+    margin-top: 15rem;
+  }
+  .Home .Home-SubTitle {
+    font-size: 1rem;
+  }
+  .Home .form-inline .form-control {
+    width: auto;
+  }
+}
+
+@media (max-width: 624px) {
+  .Home .form-inline .form-group {
+    margin: 0 16px;
+    width: 203.99px;
+  }
+}
+
+@media (max-width: 618px) {
+  .Home .form-inline {
+    height: auto;
+  }
+}

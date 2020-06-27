@@ -1,9 +1,11 @@
-$primary-color: #563d7c;
+$primary-color: #333333;
 
 
 .navbar {
     background-color: $primary-color !important;
-   
+    position: fixed;
+    width: 100%;
+    z-index: 999;
     img{
         width: 50px;
     }

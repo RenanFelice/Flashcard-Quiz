@@ -1,15 +1,20 @@
 import React from 'react';
-import './App.scss';
+import './App.css';
 import FlashcardList from './components/FlashcardList'
 import Navbar from './components/Navbar'
 import QuizProvider from './context/QuizContext'
+import { Route, Switch } from "react-router-dom";
+import Home from './components/Home'
 
 function App() {
   return (
     <div className="App">
       <QuizProvider>
         <Navbar />
-        <FlashcardList />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/flashcardlist' component={FlashcardList} /> 
+        </Switch>
       </QuizProvider>
     </div>
   );

@@ -12,7 +12,7 @@ const FlashcardList = () => {
             {loading ?
                 <>
                     <div className="spinner"></div>
-                    <div className="logo">loading...</div>
+                    <div className="logo">Loading...</div>
                 </> : <h1>loadado</h1>}
         </div>);
 }
