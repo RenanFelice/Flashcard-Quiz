@@ -1,19 +1,21 @@
 import React, { useState, useContext } from 'react';
-import {quizContext} from '../context/QuizContext'
+import { quizContext } from '../context/QuizContext'
 import './Navbar.scss'
+import { submitHandler } from '../utils/submitHandler'
 
 
 
 
 
 const Navbar = () => {
-    const {fetchQuestions} = useContext(quizContext)
-    const [traducao] = useState({ 'easy': 'Fácil',
-    'medium': 'Médio',
-    'hard': 'Difícil'
-})
-    const [difficulty, setDifficulty] = useState('')
-    const [amount, setAmount] = useState(10)
+
+    const { fetchQuestions, difficulty, setDifficulty, amount, setAmount } = useContext(quizContext)
+    const [traducao] = useState({
+        'easy': 'Fácil',
+        'medium': 'Médio',
+        'hard': 'Difícil'
+    })
+
 
 
 
@@ -38,30 +40,14 @@ const Navbar = () => {
                     </li>
 
                 </ul>
-                <form onSubmit={e => {
-                    e.preventDefault()
-                    let formInput = document.querySelector('.form-control')
-                    let isNum = /^\d+$/.test(amount);
-                   
-                    if(!isNum) {  
-                        formInput.setCustomValidity('Digite apenas números.')
-                        formInput.reportValidity();
+                <form onSubmit={e => submitHandler(e, amount, difficulty, fetchQuestions, 'inputNavbar', setAmount)}
+                    className="form-inline my-2 my-lg-0">
+                    <input value={amount}
+                        required onChange={e => {
+                            e.target.setCustomValidity('')
+                            setAmount(e.target.value)
 
-                        
-                    } else if(amount > 50){
-                        formInput.setCustomValidity('O valor deve ser menor ou igual a 50.')
-                        formInput.reportValidity();
-                        
-                    } else fetchQuestions(amount, difficulty)
-                    
-                    
-                    
-                }} className="form-inline my-2 my-lg-0">
-                    <input required onChange={e => {
-                        e.target.setCustomValidity('')
-                        setAmount(e.target.value)
-                        
-                    }} className="form-control mr-sm-2" type="search" placeholder="Número de questões" aria-label="Search" />
+                        }} className="form-control mr-sm-2" type="search" placeholder="Número de questões" aria-label="Search" id='inputNavbar' />
                     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Gerar</button>
 
                 </form>

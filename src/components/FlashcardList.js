@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Flashcard from './Flashcard'
+// import Flashcard from './Flashcard'
 import './FlashcardList.scss'
 import { quizContext } from '../context/QuizContext'
 
