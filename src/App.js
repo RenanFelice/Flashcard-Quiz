@@ -12,7 +12,7 @@ function App() {
       <QuizProvider>
         <Navbar />
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' render={props => <Home props={props}/>} />
           <Route exact path='/flashcardlist' component={FlashcardList} /> 
         </Switch>
       </QuizProvider>

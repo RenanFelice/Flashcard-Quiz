@@ -1,12 +1,13 @@
 .FlashcardList{
+  height: 100%;
     display: flex;
-    // justify-content: center;
-    // align-items: center;
     flex-wrap: wrap;
-    margin: 3rem;
     justify-content: space-around;
-    height: 100%;
+    overflow:auto;
+    padding: 150px 70px;
+
 }
+
   
   .spinner {
     position: absolute;

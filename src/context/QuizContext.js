@@ -8,8 +8,9 @@ const QuizProvider = (props) => {
     const [questions, setQuestions] = useState()
     const [loading, setLoading] = useState(true)
     const [difficulty, setDifficulty] = useState('')
-    const [amount, setAmount] = useState('')
-    const [amountHome, setAmountHome] = useState('')
+
+
+    
 
     const fetchQuestions = async (amount = 10, difficulty) => {
         setLoading(true)
@@ -29,7 +30,7 @@ const QuizProvider = (props) => {
 
     return (
 
-        <quizContext.Provider value={{ fetchQuestions, questions, loading, setDifficulty, setAmount, difficulty, amount, amountHome, setAmountHome }}>
+        <quizContext.Provider value={{ fetchQuestions, questions, loading, setDifficulty, difficulty}}>
             {props.children}
         </quizContext.Provider>);
 }

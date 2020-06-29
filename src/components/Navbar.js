@@ -2,14 +2,16 @@ import React, { useState, useContext } from 'react';
 import { quizContext } from '../context/QuizContext'
 import './Navbar.scss'
 import { submitHandler } from '../utils/submitHandler'
+import {withRouter} from "react-router-dom"
 
 
 
 
 
-const Navbar = () => {
-
-    const { fetchQuestions, difficulty, setDifficulty, amount, setAmount } = useContext(quizContext)
+const Navbar = (props) => {
+    console.log('nav render')
+    const { fetchQuestions, difficulty, setDifficulty } = useContext(quizContext)
+    const [amount, setAmount] = useState('')
     const [traducao] = useState({
         'easy': 'Fácil',
         'medium': 'Médio',
@@ -40,7 +42,7 @@ const Navbar = () => {
                     </li>
 
                 </ul>
-                <form onSubmit={e => submitHandler(e, amount, difficulty, fetchQuestions, 'inputNavbar', setAmount)}
+                <form onSubmit={e => submitHandler(e, amount, difficulty, fetchQuestions, 'inputNavbar', setAmount, props)}
                     className="form-inline my-2 my-lg-0">
                     <input value={amount}
                         required onChange={e => {
@@ -56,4 +58,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default withRouter(Navbar);
